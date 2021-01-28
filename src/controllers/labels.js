@@ -51,7 +51,7 @@ const labels = {
     },
     deleteLabel: (req, res) => {
         const id = req.params.id
-        LabelModels.deleteLabel(id)
+        LabelsModels.deleteLabel(id)
         .then((result) => {
             resultLabels = result;
             helper.response(res, resultLabels, 200, null)
@@ -61,7 +61,6 @@ const labels = {
         })
     },
     insertLabel: (req, res) => {
-        console.log(req.file);
         const {label, desc} = req.body
         const data = {
             label,
